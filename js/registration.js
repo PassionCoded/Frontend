@@ -30,17 +30,6 @@ $(document).ready(function() {
                     console.log(error);
                 }
             });
-        // $.post("http://projectmypassion-api.herokuapp.com/reg_user",
-        //     {
-        //         name1: name,
-        //         email1: email,
-        //         password1: password
-        //     }, function(data) {
-        //     if (data == 'You have Successfully Registered.....') {
-        //     $("form")[0].reset();
-        //     }
-        //     alert(data);
-        //     });
         }
     });
 });
