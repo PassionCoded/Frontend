@@ -1,5 +1,12 @@
 $(document).ready(function() {
     $("#register").click(function() {
+        var userInfo = {
+            "user": {
+                "email": $("#email").val(),
+                "password": $("#password").val(),
+                "password_confirmation": $("#cpassword").val()
+            }
+        };
         var name = $("#name").val();
         var email = $("#email").val();
         var password = $("#password").val();
@@ -12,17 +19,15 @@ $(document).ready(function() {
         alert("Your passwords don't match. Try again?");
         } else {
             $.ajax({
-                url: 'http://projectmypassion-api.herokuapp.com/reg_user',
+                type: 'POST',
+                url: 'https://projectmypassion-api.herokuapp.com/reg_user',
                 dataType: 'json',
-                type: 'post',
-                contentType: 'application/json',
-                data: JSON.stringify( { "user": {"email": $('#email').val(), "password_confirmation": $('#cpassword').val() }} ),
-                processData: false,
-                success: function( data, textStatus, jQxhr ){
-                    $('#response pre').html( JSON.stringify( data ) );
+                data: userInfo,
+                success: function(response){
+                    console.log(response);
                 },
-                error: function( jqXhr, textStatus, errorThrown ){
-                    console.log( errorThrown );
+                error: function(error){
+                    console.log(error);
                 }
             });
         // $.post("http://projectmypassion-api.herokuapp.com/reg_user",
