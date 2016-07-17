@@ -1,16 +1,20 @@
 body{
-    background: white;
+    background-image: url("images/minimalizm-gradient-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 h2{
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
+    font-family: "lucida";
 }
 
 .main{
     width: 320px;
     margin:0% 25% 0% 25%;
     padding: 10px 55px 40px;
-    background-color: rgba(187, 255, 184, 0.65);
+    background-color: rgb(132,126,177);
     border: 15px solid white;
     box-shadow: 0 0 10px;
     border-radius: 2px;
@@ -23,15 +27,13 @@ input[type=text],[type=password] {
     padding-left: 5px;
     margin-bottom: 20px;
     margin-top: 8px;
-    box-shadow: 0 0 5px #00F5FF;
-    border: 2px solid #00F5FF;
-    color: #4f4f4f;
+    color: black;
     font-size: 16px;
 }
 
 label{
-    color: #464646;
-    text-shadow: 0 1px 0 #fff;
+    color: black;
+    text-shadow: 0 1px 0 white;
     font-size: 14px;
     font-weight: bold;
 }
@@ -39,7 +41,7 @@ label{
 #register {
     font-size: 20px;
     margin-top: 15px;
-    background: linear-gradient(#22abe9 5%, #36caf0 100%);
+    background: linear-gradient(#0E083B 5%, #201858 100%);
     border: 1px solid #0F799E;
     padding: 7px 35px;
     color: white;
