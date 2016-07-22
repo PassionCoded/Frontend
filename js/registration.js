@@ -1,5 +1,7 @@
 $(document).ready(function() {
     $("#register").click(function() {
+        var password = $("#password").val()
+        var cpassword = $("#cpassword").val()
         var userInfo = {
             "user": {
                 "email": $("#email").val(),
@@ -7,7 +9,7 @@ $(document).ready(function() {
                 "password_confirmation": $("#cpassword").val()
             }
         };
-        if (name == '' || email == '' || password == '' || cpassword == '') {
+        if (email == '' || password == '' || cpassword == '') {
         alert("Please fill all fields...!!!!!!");
         } else if ((password.length) < 8) {
         alert("Password should atleast 8 character in length...!!!!!!");
@@ -20,7 +22,8 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: userInfo,
                 success: function(response){
-                    console.log(response);
+                    $(".form").hide();
+                    $("#response").show();
                 },
                 error: function(error){
                     console.log(error);
