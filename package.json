@@ -1,0 +1,21 @@
+{
+  "name": "passioncoded",
+  "version": "1.0.0",
+  "description": "Match talent with passion projects.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "PassionCoded Team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PassionCoded/Frontend.git"
+  },
+}
