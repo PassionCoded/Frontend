@@ -24,6 +24,7 @@ $(document).ready(function() {
                 success: function(response){
                     $("#form1").hide();
                     $("#form2").show();
+                    console.log(response)
                 },
                 error: function(error){
                     console.log(error);
@@ -52,7 +53,7 @@ $(document).ready(function() {
                 $("#response").show();
             },
             beforeSend: function(xhr, settings) {
-                xhr.setRequestHeader('Authorization','Bearer ' + token);
+                xhr.setRequestHeader('Authorization','Bearer ' + auth_token);
             },
             error: function(error){
                 console.log(error);
