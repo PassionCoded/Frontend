@@ -22,13 +22,41 @@ $(document).ready(function() {
                 dataType: 'json',
                 data: userInfo,
                 success: function(response){
-                    $(".form").hide();
-                    $("#response").show();
+                    $("#form1").hide();
+                    $("#form2").show();
                 },
                 error: function(error){
                     console.log(error);
                 }
             });
         }
+    });
+
+    $("#passionSubmit").click(function() {
+        var passionInfo= {
+            "passions": [
+                { "name": $("#passion1").val() },
+                { "name": $("#passion2").val() },
+                { "name": $("#passion3").val() },
+                { "name": $("#passion4").val() },
+                { "name": $("#passion5").val() }
+            ]
+        };
+        $.ajax({
+            type: 'POST',
+            url: 'https://projectmypassion-api.herokuapp.com/passions',
+            dataType: 'json',
+            data: passionInfo,
+            success: function(response){
+                $("#form2").hide();
+                $("#response").show();
+            },
+            beforeSend: function(xhr, settings) {
+                xhr.setRequestHeader('Authorization','Bearer ' + token);
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
     });
 });
